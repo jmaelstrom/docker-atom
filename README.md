@@ -12,5 +12,5 @@ or
 add the atom script to your path.
 
 # TODO
-Masquarde the in container user as the host user
+Masquerade the in container user as the host user
 
