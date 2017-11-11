@@ -5,7 +5,7 @@ Based upon: https://github.com/rakshazi/docker-atom - but without the PHP depend
 
 # Usage
 
-docker run -d -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/shm:/dev/shm -v `pwd`:/workspace -e DISPLAY=${DISPLAY} -v ~/.atom:/root/.atom mgen/atom:1.0.0
+docker run -d -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/shm:/dev/shm -v `pwd`:/workspace -e DISPLAY=${DISPLAY} -v ~/.atom:/root/.atom jmaelstrom/docker-atom:latest 
 
 or
 
