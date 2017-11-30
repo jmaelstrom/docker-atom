@@ -20,6 +20,7 @@ RUN apt-get -qq update && \
                 xdg-utils \
                 composer \
 		libxss1 \
+		libxkbfile1 \
                 python && \
     apt-get clean && \
     curl -L https://atom.io/download/deb > /tmp/atom.deb && \
