@@ -1,4 +1,11 @@
+#!/bin/bash
+
+script-cleanup() {
+	docker rm --force atom &> /dev/null
+}
+
+trap "script-cleanup" SIGHUP SIGINT SIGTERM EXIT
+
 xhost + &> /dev/null
-ID=$(docker run -d -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/shm:/dev/shm -v `pwd`:/workspace -e DISPLAY=${DISPLAY} -v ~/.atom:/root/.atom --name atom jmaelstrom/idocker-atom)
-docker wait $ID 
-docker rm $ID
+ID=$(docker run -d -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/shm:/dev/shm -v `pwd`:/workspace -e DISPLAY=${DISPLAY} -v ~/.atom:/root/.atom --name atom jmaelstrom/docker-atom)
+docker wait $ID &> /dev/null
